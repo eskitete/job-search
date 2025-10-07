@@ -43,7 +43,13 @@ jobs:
 
       - name: Run scraper
         run: |
-          python "$SCRIPT_PATH" --domains-file "$DOMAINS_FILE" --out-dir "$OUTPUT_DIR"
+          echo "=== Running job scout ==="
+          python "$SCRIPT_PATH" \
+            --domains-file "$DOMAINS_FILE" \
+            --out-dir "$OUTPUT_DIR" \
+            --force-empty-csv \
+            --max-pages 10
+          echo "=== Script finished ==="
 
       - name: Upload artifact (latest run)
         uses: actions/upload-artifact@v4
