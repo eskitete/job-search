@@ -1,5 +1,5 @@
 # add near imports
-import argparse, os, pathlib
+import argparse, os, pathlib, asyncio
 
 # replace your `main()` and __main__ block with:
 async def run(domains, out_dir):
